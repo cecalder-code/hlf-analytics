@@ -1,0 +1,76 @@
+COUNT: 16
+CAPTION: Avg Weekly SCG
+FORMULA: SUM([Net lbs])/COUNTD([Calculation_1577948745586528257])
+---
+CAPTION: Year and Week #
+FORMULA: STR(YEAR([Date]))+" "+STR([Week #])
+---
+CAPTION: YTD Net Lbs
+FORMULA: SUM(IF DATEDIFF(('year'),[Date],TODAY()) = 0
+
+AND [Date] <= TODAY()
+
+THEN [Net lbs]
+
+END)
+---
+CAPTION: Methane Avoided (lbs)
+FORMULA: [CO2e (lbs)]/28
+---
+CAPTION: Store Shortened
+FORMULA: if CONTAINS([Store], "Stanton") then "Stanton"
+elseif CONTAINS([Store], "Red Banks") then "Red Banks"
+ELSEIF CONTAINS([Store], "100 East 10th Street") then "10th St"
+else [Store]
+END
+---
+CAPTION: Store Number and Name
+FORMULA: [Calculation_3751217044297113600]+" ("+ ([Calculation_2853030399312756738])+")"
+---
+CAPTION: Store Latitude
+FORMULA: if [Calculation_3751217044297113600]="8582" then 35.582703208531186
+elseif [Calculation_3751217044297113600]="8962" then 35.60603330064299
+elseif [Calculation_3751217044297113600]= "13481" then 35.60565292725027
+elseif [Calculation_3751217044297113600]= "27296" then 35.55201327873732
+END
+---
+CAPTION: Store Number
+FORMULA: if CONTAINS([Store], "Stanton") then "8962"
+elseif CONTAINS([Store], "Red Banks") then "8582"
+ELSEIF CONTAINS([Store], "100 East 10th Street") then "13481"
+ELSEIF CONTAINS([Store], "Winterville") then "27296"
+else [Store]
+END
+---
+CAPTION: STDEV Days between collections
+FORMULA: STDEV([# of Days between collections])
+---
+CAPTION: Window_Max
+FORMULA: if SUM([Net lbs])=WINDOW_MAX(SUM([Net lbs])) then "Max"
+else "Other"
+END
+---
+CAPTION: Transportation CO2e
+FORMULA: [Miles Driven]*.89
+---
+CAPTION: SCG lbs per mile driven
+FORMULA: [Net lbs]/[Miles Driven]
+---
+CAPTION: CO2e Avoided per Mile
+FORMULA: [CO2e (lbs)]/[Miles Driven]
+---
+CAPTION: Icon Placeholder
+FORMULA: MIN(10)
+---
+CAPTION: Rubicon Period
+FORMULA: if [Date]> #2026-01-06# THEN "Rubicon Hauling"
+ELSE "Pre-Rubicon"
+END
+---
+CAPTION: Store Longitude
+FORMULA: if [Calculation_3751217044297113600]="8582" then -77.37319866266577
+ELSEIF  [Calculation_3751217044297113600]="8962" then -77.41190855955091
+elseif [Calculation_3751217044297113600]="13481" then -77.37383671199458
+elseif [Calculation_3751217044297113600]= "27296" then -77.40503959520281
+END
+---

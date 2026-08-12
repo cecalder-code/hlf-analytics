@@ -1,0 +1,5 @@
+- [ ] Setup React + TypeScript app scaffold
+- [ ] Add Material UI, Supabase, and PWA support
+- [ ] Configure GitHub Pages deployment
+- [ ] Create README and project docs
+- [ ] Verify project files exist

@@ -1,0 +1,255 @@
+Source workbook: Coffee Grounds Data.xlsx
+Source Tableau workbook: HLF SCG Reporting.twb
+Output catalog: field_catalog.xlsx
+
+Excel header count: 21
+Excel formula columns detected: [0, 1, 2, 4, 7, 8, 9, 11, 12, 15, 18]
+Generated catalog rows: 31
+
+All Excel headers were mapped to target database fields.
+
+Tableau calculated fields extracted: 69
+ - Avg Weekly SCG: SUM([Net lbs])/COUNTD([Calculation_1577948745586528257])
+ - Year and Week #: STR(YEAR([Date]))+" "+STR([Week #])
+ - YTD Net Lbs: SUM(IF DATEDIFF(('year'),[Date],TODAY()) = 0
+
+AND [Date] <= TODAY()
+
+THEN [Net lbs]
+
+END)
+ - Methane Avoided (lbs): [CO2e (lbs)]/28
+ - Store Shortened: if CONTAINS([Store], "Stanton") then "Stanton"
+elseif CONTAINS([Store], "Red Banks") then "Red Banks"
+ELSEIF CONTAINS([Store], "100 East 10th Street") then "10th St"
+else [Store]
+END
+ - Store Number and Name: [Calculation_3751217044297113600]+" ("+ ([Calculation_2853030399312756738])+")"
+ - Store Latitude: if [Calculation_3751217044297113600]="8582" then 35.582703208531186
+elseif [Calculation_3751217044297113600]="8962" then 35.60603330064299
+elseif [Calculation_3751217044297113600]= "13481" then 35.60565292725027
+elseif [Calculation_3751217044297113600]= "27296" then 35.55201327873732
+END
+ - Store Number: if CONTAINS([Store], "Stanton") then "8962"
+elseif CONTAINS([Store], "Red Banks") then "8582"
+ELSEIF CONTAINS([Store], "100 East 10th Street") then "13481"
+ELSEIF CONTAINS([Store], "Winterville") then "27296"
+else [Store]
+END
+ - STDEV Days between collections: STDEV([# of Days between collections])
+ - Window_Max: if SUM([Net lbs])=WINDOW_MAX(SUM([Net lbs])) then "Max"
+else "Other"
+END
+ - Transportation CO2e: [Miles Driven]*.89
+ - SCG lbs per mile driven: [Net lbs]/[Miles Driven]
+ - CO2e Avoided per Mile: [CO2e (lbs)]/[Miles Driven]
+ - Icon Placeholder: MIN(10)
+ - Rubicon Period: if [Date]> #2026-01-06# THEN "Rubicon Hauling"
+ELSE "Pre-Rubicon"
+END
+ - Store Longitude: if [Calculation_3751217044297113600]="8582" then -77.37319866266577
+ELSEIF  [Calculation_3751217044297113600]="8962" then -77.41190855955091
+elseif [Calculation_3751217044297113600]="13481" then -77.37383671199458
+elseif [Calculation_3751217044297113600]= "27296" then -77.40503959520281
+END
+ - Store Number: if CONTAINS([Store], "Stanton") then "8962"
+elseif CONTAINS([Store], "Red Banks") then "8582"
+ELSEIF CONTAINS([Store], "100 East 10th Street") then "13481"
+ELSEIF CONTAINS([Store], "Winterville") then "27296"
+else [Store]
+END
+ - Rubicon Period: if [Date]> #2026-01-06# THEN "Rubicon Hauling"
+ELSE "Pre-Rubicon"
+END
+ - Store Number: if CONTAINS([Store], "Stanton") then "8962"
+elseif CONTAINS([Store], "Red Banks") then "8582"
+ELSEIF CONTAINS([Store], "100 East 10th Street") then "13481"
+ELSEIF CONTAINS([Store], "Winterville") then "27296"
+else [Store]
+END
+ - STDEV Days between collections: STDEV([# of Days between collections])
+ - Transportation CO2e: [Miles Driven]*.89
+ - SCG lbs per mile driven: [Net lbs]/[Miles Driven]
+ - CO2e Avoided per Mile: [CO2e (lbs)]/[Miles Driven]
+ - Rubicon Period: if [Date]> #2026-01-06# THEN "Rubicon Hauling"
+ELSE "Pre-Rubicon"
+END
+ - Avg Weekly SCG: SUM([Net lbs])/COUNTD([Calculation_1577948745586528257])
+ - Year and Week #: STR(YEAR([Date]))+" "+STR([Week #])
+ - Store Number: if CONTAINS([Store], "Stanton") then "8962"
+elseif CONTAINS([Store], "Red Banks") then "8582"
+ELSEIF CONTAINS([Store], "100 East 10th Street") then "13481"
+ELSEIF CONTAINS([Store], "Winterville") then "27296"
+else [Store]
+END
+ - Rubicon Period: if [Date]> #2026-01-06# THEN "Rubicon Hauling"
+ELSE "Pre-Rubicon"
+END
+ - Store Number: if CONTAINS([Store], "Stanton") then "8962"
+elseif CONTAINS([Store], "Red Banks") then "8582"
+ELSEIF CONTAINS([Store], "100 East 10th Street") then "13481"
+ELSEIF CONTAINS([Store], "Winterville") then "27296"
+else [Store]
+END
+ - Icon Placeholder: MIN(10)
+ - Rubicon Period: if [Date]> #2026-01-06# THEN "Rubicon Hauling"
+ELSE "Pre-Rubicon"
+END
+ - Store Number: if CONTAINS([Store], "Stanton") then "8962"
+elseif CONTAINS([Store], "Red Banks") then "8582"
+ELSEIF CONTAINS([Store], "100 East 10th Street") then "13481"
+ELSEIF CONTAINS([Store], "Winterville") then "27296"
+else [Store]
+END
+ - Window_Max: if SUM([Net lbs])=WINDOW_MAX(SUM([Net lbs])) then "Max"
+else "Other"
+END
+ - Rubicon Period: if [Date]> #2026-01-06# THEN "Rubicon Hauling"
+ELSE "Pre-Rubicon"
+END
+ - Methane Avoided (lbs): [CO2e (lbs)]/28
+ - Store Number: if CONTAINS([Store], "Stanton") then "8962"
+elseif CONTAINS([Store], "Red Banks") then "8582"
+ELSEIF CONTAINS([Store], "100 East 10th Street") then "13481"
+ELSEIF CONTAINS([Store], "Winterville") then "27296"
+else [Store]
+END
+ - Rubicon Period: if [Date]> #2026-01-06# THEN "Rubicon Hauling"
+ELSE "Pre-Rubicon"
+END
+ - Year and Week #: STR(YEAR([Date]))+" "+STR([Week #])
+ - Store Number: if CONTAINS([Store], "Stanton") then "8962"
+elseif CONTAINS([Store], "Red Banks") then "8582"
+ELSEIF CONTAINS([Store], "100 East 10th Street") then "13481"
+ELSEIF CONTAINS([Store], "Winterville") then "27296"
+else [Store]
+END
+ - Rubicon Period: if [Date]> #2026-01-06# THEN "Rubicon Hauling"
+ELSE "Pre-Rubicon"
+END
+ - Store Number: if CONTAINS([Store], "Stanton") then "8962"
+elseif CONTAINS([Store], "Red Banks") then "8582"
+ELSEIF CONTAINS([Store], "100 East 10th Street") then "13481"
+ELSEIF CONTAINS([Store], "Winterville") then "27296"
+else [Store]
+END
+ - Rubicon Period: if [Date]> #2026-01-06# THEN "Rubicon Hauling"
+ELSE "Pre-Rubicon"
+END
+ - Year and Week #: STR(YEAR([Date]))+" "+STR([Week #])
+ - Store Number: if CONTAINS([Store], "Stanton") then "8962"
+elseif CONTAINS([Store], "Red Banks") then "8582"
+ELSEIF CONTAINS([Store], "100 East 10th Street") then "13481"
+ELSEIF CONTAINS([Store], "Winterville") then "27296"
+else [Store]
+END
+ - Rubicon Period: if [Date]> #2026-01-06# THEN "Rubicon Hauling"
+ELSE "Pre-Rubicon"
+END
+ - Store Number: if CONTAINS([Store], "Stanton") then "8962"
+elseif CONTAINS([Store], "Red Banks") then "8582"
+ELSEIF CONTAINS([Store], "100 East 10th Street") then "13481"
+ELSEIF CONTAINS([Store], "Winterville") then "27296"
+else [Store]
+END
+ - Rubicon Period: if [Date]> #2026-01-06# THEN "Rubicon Hauling"
+ELSE "Pre-Rubicon"
+END
+ - Store Number: if CONTAINS([Store], "Stanton") then "8962"
+elseif CONTAINS([Store], "Red Banks") then "8582"
+ELSEIF CONTAINS([Store], "100 East 10th Street") then "13481"
+ELSEIF CONTAINS([Store], "Winterville") then "27296"
+else [Store]
+END
+ - Rubicon Period: if [Date]> #2026-01-06# THEN "Rubicon Hauling"
+ELSE "Pre-Rubicon"
+END
+ - Store Shortened: if CONTAINS([Store], "Stanton") then "Stanton"
+elseif CONTAINS([Store], "Red Banks") then "Red Banks"
+ELSEIF CONTAINS([Store], "100 East 10th Street") then "10th St"
+else [Store]
+END
+ - Store Number and Name: [Calculation_3751217044297113600]+" ("+ ([Calculation_2853030399312756738])+")"
+ - Store Latitude: if [Calculation_3751217044297113600]="8582" then 35.582703208531186
+elseif [Calculation_3751217044297113600]="8962" then 35.60603330064299
+elseif [Calculation_3751217044297113600]= "13481" then 35.60565292725027
+elseif [Calculation_3751217044297113600]= "27296" then 35.55201327873732
+END
+ - Store Number: if CONTAINS([Store], "Stanton") then "8962"
+elseif CONTAINS([Store], "Red Banks") then "8582"
+ELSEIF CONTAINS([Store], "100 East 10th Street") then "13481"
+ELSEIF CONTAINS([Store], "Winterville") then "27296"
+else [Store]
+END
+ - Store Longitude: if [Calculation_3751217044297113600]="8582" then -77.37319866266577
+ELSEIF  [Calculation_3751217044297113600]="8962" then -77.41190855955091
+elseif [Calculation_3751217044297113600]="13481" then -77.37383671199458
+elseif [Calculation_3751217044297113600]= "27296" then -77.40503959520281
+END
+ - Store Shortened: if CONTAINS([Store], "Stanton") then "Stanton"
+elseif CONTAINS([Store], "Red Banks") then "Red Banks"
+ELSEIF CONTAINS([Store], "100 East 10th Street") then "10th St"
+else [Store]
+END
+ - Store Number and Name: [Calculation_3751217044297113600]+" ("+ ([Calculation_2853030399312756738])+")"
+ - Store Number: if CONTAINS([Store], "Stanton") then "8962"
+elseif CONTAINS([Store], "Red Banks") then "8582"
+ELSEIF CONTAINS([Store], "100 East 10th Street") then "13481"
+ELSEIF CONTAINS([Store], "Winterville") then "27296"
+else [Store]
+END
+ - Rubicon Period: if [Date]> #2026-01-06# THEN "Rubicon Hauling"
+ELSE "Pre-Rubicon"
+END
+ - Store Number: if CONTAINS([Store], "Stanton") then "8962"
+elseif CONTAINS([Store], "Red Banks") then "8582"
+ELSEIF CONTAINS([Store], "100 East 10th Street") then "13481"
+ELSEIF CONTAINS([Store], "Winterville") then "27296"
+else [Store]
+END
+ - Rubicon Period: if [Date]> #2026-01-06# THEN "Rubicon Hauling"
+ELSE "Pre-Rubicon"
+END
+ - Store Number: if CONTAINS([Store], "Stanton") then "8962"
+elseif CONTAINS([Store], "Red Banks") then "8582"
+ELSEIF CONTAINS([Store], "100 East 10th Street") then "13481"
+ELSEIF CONTAINS([Store], "Winterville") then "27296"
+else [Store]
+END
+ - Rubicon Period: if [Date]> #2026-01-06# THEN "Rubicon Hauling"
+ELSE "Pre-Rubicon"
+END
+ - Store Number: if CONTAINS([Store], "Stanton") then "8962"
+elseif CONTAINS([Store], "Red Banks") then "8582"
+ELSEIF CONTAINS([Store], "100 East 10th Street") then "13481"
+ELSEIF CONTAINS([Store], "Winterville") then "27296"
+else [Store]
+END
+ - Rubicon Period: if [Date]> #2026-01-06# THEN "Rubicon Hauling"
+ELSE "Pre-Rubicon"
+END
+ - YTD Net Lbs: SUM(IF DATEDIFF(('year'),[Date],TODAY()) = 0
+
+AND [Date] <= TODAY()
+
+THEN [Net lbs]
+
+END)
+ - Store Number: if CONTAINS([Store], "Stanton") then "8962"
+elseif CONTAINS([Store], "Red Banks") then "8582"
+ELSEIF CONTAINS([Store], "100 East 10th Street") then "13481"
+ELSEIF CONTAINS([Store], "Winterville") then "27296"
+else [Store]
+END
+ - Rubicon Period: if [Date]> #2026-01-06# THEN "Rubicon Hauling"
+ELSE "Pre-Rubicon"
+END
+ - Store Number: if CONTAINS([Store], "Stanton") then "8962"
+elseif CONTAINS([Store], "Red Banks") then "8582"
+ELSEIF CONTAINS([Store], "100 East 10th Street") then "13481"
+ELSEIF CONTAINS([Store], "Winterville") then "27296"
+else [Store]
+END
+ - Rubicon Period: if [Date]> #2026-01-06# THEN "Rubicon Hauling"
+ELSE "Pre-Rubicon"
+END

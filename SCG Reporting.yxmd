@@ -1,0 +1,240 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2024.2" RunE2="T">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="54" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">C:\Users\ccaldero\OneDrive\1. Hidden Leaf Farm\2. Data\Coffee Grounds Data.xlsx|||`Collection DB$`</File>
+          <FormatSpecificOptions>
+            <FirstRowData>False</FirstRowData>
+            <ImportLine>1</ImportLine>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Coffee Grounds Data.xlsx
+Query=`Collection DB$`</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Week #" source="File: C:\Users\ccaldero\OneDrive\1. Hidden Leaf Farm\2. Data\Coffee Grounds Data.xlsx|||`Collection DB$`" type="Double" />
+            <Field name="SBUX FY Week #" source="File: C:\Users\ccaldero\OneDrive\1. Hidden Leaf Farm\2. Data\Coffee Grounds Data.xlsx|||`Collection DB$`" type="Double" />
+            <Field name="FY Week # Helper" source="File: C:\Users\ccaldero\OneDrive\1. Hidden Leaf Farm\2. Data\Coffee Grounds Data.xlsx|||`Collection DB$`" type="Date" />
+            <Field name="Date" size="255" source="File: C:\Users\ccaldero\OneDrive\1. Hidden Leaf Farm\2. Data\Coffee Grounds Data.xlsx|||`Collection DB$`" type="V_String" />
+            <Field name="Day of the week" size="255" source="File: C:\Users\ccaldero\OneDrive\1. Hidden Leaf Farm\2. Data\Coffee Grounds Data.xlsx|||`Collection DB$`" type="V_String" />
+            <Field name="Store" size="255" source="File: C:\Users\ccaldero\OneDrive\1. Hidden Leaf Farm\2. Data\Coffee Grounds Data.xlsx|||`Collection DB$`" type="V_String" />
+            <Field name="SCG mass lbs" source="File: C:\Users\ccaldero\OneDrive\1. Hidden Leaf Farm\2. Data\Coffee Grounds Data.xlsx|||`Collection DB$`" type="Double" />
+            <Field name="Net lbs" source="File: C:\Users\ccaldero\OneDrive\1. Hidden Leaf Farm\2. Data\Coffee Grounds Data.xlsx|||`Collection DB$`" type="Double" />
+            <Field name="# of Days between collections" source="File: C:\Users\ccaldero\OneDrive\1. Hidden Leaf Farm\2. Data\Coffee Grounds Data.xlsx|||`Collection DB$`" type="Double" />
+            <Field name="Days Since 1st Collection" source="File: C:\Users\ccaldero\OneDrive\1. Hidden Leaf Farm\2. Data\Coffee Grounds Data.xlsx|||`Collection DB$`" type="Double" />
+            <Field name="Who initiated pickup?" size="255" source="File: C:\Users\ccaldero\OneDrive\1. Hidden Leaf Farm\2. Data\Coffee Grounds Data.xlsx|||`Collection DB$`" type="V_String" />
+            <Field name="Per Day (lbs)" source="File: C:\Users\ccaldero\OneDrive\1. Hidden Leaf Farm\2. Data\Coffee Grounds Data.xlsx|||`Collection DB$`" type="Double" />
+            <Field name="Running Total" source="File: C:\Users\ccaldero\OneDrive\1. Hidden Leaf Farm\2. Data\Coffee Grounds Data.xlsx|||`Collection DB$`" type="Double" />
+            <Field name="Master Gardener" source="File: C:\Users\ccaldero\OneDrive\1. Hidden Leaf Farm\2. Data\Coffee Grounds Data.xlsx|||`Collection DB$`" type="Double" />
+            <Field name="Cardboard (lbs)" source="File: C:\Users\ccaldero\OneDrive\1. Hidden Leaf Farm\2. Data\Coffee Grounds Data.xlsx|||`Collection DB$`" type="Double" />
+            <Field name="Food Waste (lbs)" source="File: C:\Users\ccaldero\OneDrive\1. Hidden Leaf Farm\2. Data\Coffee Grounds Data.xlsx|||`Collection DB$`" type="Double" />
+            <Field name="Route" size="255" source="File: C:\Users\ccaldero\OneDrive\1. Hidden Leaf Farm\2. Data\Coffee Grounds Data.xlsx|||`Collection DB$`" type="V_String" />
+            <Field name="Miles Driven" source="File: C:\Users\ccaldero\OneDrive\1. Hidden Leaf Farm\2. Data\Coffee Grounds Data.xlsx|||`Collection DB$`" type="Double" />
+            <Field name="Truck Odometer" source="File: C:\Users\ccaldero\OneDrive\1. Hidden Leaf Farm\2. Data\Coffee Grounds Data.xlsx|||`Collection DB$`" type="Double" />
+            <Field name="Notes" size="255" source="File: C:\Users\ccaldero\OneDrive\1. Hidden Leaf Farm\2. Data\Coffee Grounds Data.xlsx|||`Collection DB$`" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="162" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="SBUX FY Week #" selected="False" />
+            <SelectField field="FY Week # Helper" selected="False" />
+            <SelectField field="Day of the week" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MultiFieldFormula.MultiFieldFormula">
+        <Position x="270" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FieldType>Numeric</FieldType>
+          <Fields orderChanged="False">
+            <Field name="Master Gardener" />
+            <Field name="Cardboard (lbs)" />
+            <Field name="Food Waste (lbs)" />
+            <Field name="Week #" selected="False" />
+            <Field name="SCG mass lbs" selected="False" />
+            <Field name="Net lbs" selected="False" />
+            <Field name="# of Days between collections" selected="False" />
+            <Field name="Days Since 1st Collection" selected="False" />
+            <Field name="Per Day (lbs)" selected="False" />
+            <Field name="Running Total" selected="False" />
+            <Field name="*Unknown" selected="False" />
+          </Fields>
+          <CopyOutput value="False" />
+          <Expression>if isnull([_CurrentField_]) then 0 else [_CurrentField_] endif</Expression>
+          <ChangeFieldType value="True" />
+          <OutputFieldType type="Double" size="8" scale="1" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>if isnull([_CurrentField_]) then 0 else [_CurrentField_] endif</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMultiFieldFormula" />
+    </Node>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="378" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="[Net lbs]*0.154" field="CO2e (lbs)" size="8" type="Double" enabled="true" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[CO2e (lbs) = [Net lbs]*0.154
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="5">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="510" y="198" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="CO2e (lbs)" action="Sum" rename="Sum_CO2e (lbs)" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="6">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+        <Position x="510" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <File MaxRecords="" FileFormat="25">C:\Users\ccaldero\OneDrive\1. Hidden Leaf Farm\2. Data\Coffee Grounds Data - Alteryx Output.xlsx|||Alteryx</File>
+          <Passwords />
+          <Disable>False</Disable>
+          <FormatSpecificOptions>
+            <PreserveFormat>False</PreserveFormat>
+            <UNCLocal>False</UNCLocal>
+            <SkipFieldNames>False</SkipFieldNames>
+            <SuppressBlankFile>False</SuppressBlankFile>
+            <OutputOption>Overwrite</OutputOption>
+          </FormatSpecificOptions>
+          <MultiFile value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Coffee Grounds Data - Alteryx Output.xlsx
+Query=Alteryx</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="2" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="3" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="Output" />
+      <Destination ToolID="4" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="5" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="6" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <RunWithE2 value="True" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <IsTemplate value="False" />
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>SCG Reporting</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="15c24c8f-9beb-4864-9d91-16f9f621475b" />
+      <Telemetry>
+        <PreviousWorkflowId value="922d0ace-efd7-4670-85e9-4b416342b2dc" />
+        <OriginWorkflowId value="d8f2a77c-6c17-47c8-a782-c7729ec8b6a6" />
+      </Telemetry>
+      <PlatformWorkflowId value="" />
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>
