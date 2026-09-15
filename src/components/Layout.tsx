@@ -35,8 +35,8 @@ export default function Layout({ children, darkMode, onToggleTheme }: LayoutProp
       </AppBar>
       <Container component='main' sx={{ py: 3 }}>
         <Box sx={{ mb: 3, display: 'flex', gap: 2, flexWrap: 'wrap' }}>
-          <Link component={RouterLink} to='/' underline='hover'>Public Dashboard</Link>
-          <Link component={RouterLink} to='/admin' underline='hover'>Admin Portal</Link>
+          <Link component={RouterLink} to='/hlf-analytics/' underline='hover'>Public Dashboard</Link>
+          <Link component={RouterLink} to='/hlf-analytics/admin' underline='hover'>Admin Portal</Link>
         </Box>
         {children}
       </Container>

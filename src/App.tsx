@@ -24,8 +24,8 @@ function App() {
       <CssBaseline />
       <Layout darkMode={darkMode} onToggleTheme={() => setDarkMode((value) => !value)}>
         <Routes>
-          <Route path='/' element={<DashboardPage />} />
-          <Route path='/admin/*' element={<AdminPage />} />
+          <Route path='/hlf-analytics/' element={<DashboardPage />} />
+          <Route path='/hlf-analytics/admin/*' element={<AdminPage />} />
           <Route path='*' element={<NotFoundPage />} />
         </Routes>
       </Layout>
