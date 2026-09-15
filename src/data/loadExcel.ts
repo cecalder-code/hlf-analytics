@@ -11,7 +11,7 @@ function normalizeRow(row: Record<string, unknown>): ExcelRecord {
 export async function loadExcelData(): Promise<ExcelRecord[]> {
   try {
     const basePath = import.meta.env.BASE_URL || '/';
-    const response = await fetch(`${basePath}Coffee Grounds Data - Alteryx Output.xlsx`);
+    const response = await fetch(`${basePath}/Coffee Grounds Data - Alteryx Output.xlsx`);
 
     if (!response.ok) {
       throw new Error(`Unable to load Excel file: ${response.status} ${response.statusText}`);
