@@ -2,8 +2,6 @@ import * as XLSX from 'xlsx';
 
 export type ExcelRecord = Record<string, string | number | boolean | Date | null>;
 
-const EXCEL_FILE_PATH = '../../Coffee Grounds Data - Alteryx Output.xlsx';
-
 function normalizeRow(row: Record<string, unknown>): ExcelRecord {
   return Object.fromEntries(
     Object.entries(row).map(([key, value]) => [String(key).trim(), value ?? null])
@@ -12,8 +10,8 @@ function normalizeRow(row: Record<string, unknown>): ExcelRecord {
 
 export async function loadExcelData(): Promise<ExcelRecord[]> {
   try {
-    const fileUrl = new URL(EXCEL_FILE_PATH, import.meta.url);
-    const response = await fetch(fileUrl.href);
+    const basePath = import.meta.env.BASE_URL || '/';
+    const response = await fetch(`${basePath}Coffee Grounds Data - Alteryx Output.xlsx`);
 
     if (!response.ok) {
       throw new Error(`Unable to load Excel file: ${response.status} ${response.statusText}`);
