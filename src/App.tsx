@@ -14,6 +14,22 @@ function App() {
       createTheme({
         palette: {
           mode: darkMode ? 'dark' : 'light',
+          background: {
+            default: '#121212',
+            paper: 'rgba(255,255,255,0.05)',
+          },
+          text: {
+            primary: '#F2F2F2',
+            secondary: '#A8ADA9',
+          },
+          success: { main: '#4CAF50' },
+        },
+        shape: { borderRadius: 8 },
+        typography: { fontFamily: '"Segoe UI", Roboto, Helvetica, Arial, sans-serif' },
+        components: {
+          MuiPaper: { styleOverrides: { root: { backgroundImage: 'none' } } },
+          MuiOutlinedInput: { styleOverrides: { root: { color: '#F2F2F2', '& fieldset': { borderColor: 'rgba(255,255,255,0.2)' } } } },
+          MuiInputLabel: { styleOverrides: { root: { color: '#A8ADA9' } } },
         },
       }),
     [darkMode]

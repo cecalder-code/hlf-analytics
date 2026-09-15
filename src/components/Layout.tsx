@@ -21,8 +21,8 @@ export default function Layout({ children, darkMode, onToggleTheme }: LayoutProp
   const [open, setOpen] = useState(false);
 
   return (
-    <Box sx={{ minHeight: '100vh', bgcolor: 'background.default', color: 'text.primary' }}>
-      <AppBar position='sticky'>
+    <Box sx={{ minHeight: '100vh', bgcolor: '#121212', color: '#F2F2F2' }}>
+      <AppBar position='sticky' sx={{ bgcolor: '#181818', borderBottom: '1px solid rgba(255,255,255,0.1)', boxShadow: 'none' }}>
         <Toolbar>
           <IconButton edge='start' color='inherit' onClick={() => setOpen((value) => !value)} sx={{ mr: 2 }}>
             <MenuIcon />
@@ -35,8 +35,8 @@ export default function Layout({ children, darkMode, onToggleTheme }: LayoutProp
       </AppBar>
       <Container component='main' sx={{ py: 3 }}>
         <Box sx={{ mb: 3, display: 'flex', gap: 2, flexWrap: 'wrap' }}>
-          <Link component={RouterLink} to='/hlf-analytics/' underline='hover'>Public Dashboard</Link>
-          <Link component={RouterLink} to='/hlf-analytics/admin' underline='hover'>Admin Portal</Link>
+          <Link component={RouterLink} to='/hlf-analytics/' underline='hover' sx={{ color: '#8be28f' }}>Public Dashboard</Link>
+          <Link component={RouterLink} to='/hlf-analytics/admin' underline='hover' sx={{ color: '#8be28f' }}>Admin Portal</Link>
         </Box>
         {children}
       </Container>
