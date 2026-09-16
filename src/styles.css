@@ -22,6 +22,14 @@ body {
   text-transform: uppercase;
 }
 
+.dashboard-logo {
+  display: block;
+  height: 48px;
+  width: auto;
+  max-height: 8vh;
+  object-fit: contain;
+}
+
 .weekly-total-row .MuiDataGrid-cell {
   font-weight: 800;
   color: #9cf29f;
