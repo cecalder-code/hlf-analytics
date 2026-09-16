@@ -21,3 +21,8 @@ body {
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
+
+.weekly-total-row .MuiDataGrid-cell {
+  font-weight: 800;
+  color: #9cf29f;
+}

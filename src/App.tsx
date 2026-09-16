@@ -30,6 +30,7 @@ function App() {
           MuiPaper: { styleOverrides: { root: { backgroundImage: 'none' } } },
           MuiOutlinedInput: { styleOverrides: { root: { color: '#F2F2F2', '& fieldset': { borderColor: 'rgba(255,255,255,0.2)' } } } },
           MuiInputLabel: { styleOverrides: { root: { color: '#A8ADA9' } } },
+          MuiMenu: { styleOverrides: { paper: { backgroundColor: '#1E1E1E', color: '#F2F2F2' } } },
         },
       }),
     [darkMode]
